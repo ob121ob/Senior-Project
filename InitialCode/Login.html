@@ -4,7 +4,14 @@
         <meta charset="utf-8">
         <title>Login Form</title>
         <link rel = "stylesheet" href = "login.css">
+
+        <script src="/__/firebase/7.11.0/firebase-app.js"></script>
+        <script src="/__/firebase/7.11.0/firebase-auth.js"></script>
+        <script src="/__/firebase/7.11.0/firebase-database.js"></script>
+        <script src="/__/firebase/7.11.0/firebase-storage.js"></script>
+        
     </head>
+    
     <body>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
@@ -14,15 +21,20 @@
         </div>
 
 
-        <form class="login" action = "whatever the php file is" method = "post">
+        <form class="login" action = "homepage.html" method = "post">
             <h1>LOGIN</h1>
-            <input type="text" name ="Username" placeholder="Username">
-            <input type="password" name = "Password" placeholder="Password">
-            <input type="submit" name = "SubmitBtn" placeholder="Login">
+            <input type="text" input id ="email" name ="Username" placeholder="Username">
+            <input type="password" input id = "password" name = "Password" placeholder="Password">
+            <input type="submit" button id = "login_button" name = "SubmitBtn" placeholder="Login">
             <Footer>
                 <a href = signup.html>Not a member yet? Sign up here!</a>
             </Footer>
         </form>
-    </body>
+
+
+
+
+
+
 </html>
 
