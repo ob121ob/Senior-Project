@@ -6,14 +6,16 @@
         <!-- Bootstrap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <title> Forum, board overview</title>
+        <title>Topic Overview</title>
 
         <style type = "text/css">
-            .forum-col{
+            .topic-col{
                 min-width:16em;
-
             }
             .last-col{
+                min-width:12em;
+            }
+            .created-col{
                 min-width:12em;
             }
             .footer {
@@ -29,7 +31,7 @@
 
 
     </head>
-
+    
     <body>
         <!--This is the navbar, lets just keep to a search and maybe one link later, come bacl to this and link homepage!!!!!!!!-->
         <nav class="navbar navbar-dark bg-dark">
@@ -45,16 +47,17 @@
         <div class="container my-3">
             <nav class= "breadcrumb">
                 <a href="#0" class = "breadcrumb-item">Board Index</a>
-                <span class = "breadcrumb-item active"></span>
+                <a href="#0" class = "breadcrumb-item">Forum Category</a>
+                <span class = "breadcrumb-item active">Forum Name</span>
             </nav>
 
-            <h2 class = "h4 text-white bg-info mb-0 p-4 rounded-top">Forum Category</h2>
-                <table class = "table table-striped table-bordered table-hover">
+            <h2 class = "h4 text-white bg-info mb-0 p-4 rounded-top">Forum Name</h2>
+                <table class = "table table-striped table-bordered table-hover table-repsonsive-lg">
                     <thread class = "thread-light">
                         <tr>
-                            <th scope = "col" class  = "forum-col">Forum</th>
-                            <th scope = "col">Topics</th>
-                            <th scope = "col">Posts</th>
+                            <th scope = "col" class = "topic-col">Topics</th>
+                            <th scope = "col" class = "created-col" >Created</th>
+                            <th scope = "col">Statistics</th>
                             <th scope = "col" class  = "last-col">Last Post</th>
 
                         </tr>
@@ -62,17 +65,19 @@
                     <tbody>
                         <tr>
                             <td>
-                                <h3 class= "h5 mb-0"><a href= "0" class="text-uppercase">Forum Name</a></h3>
-                                <p class = "mb-0">Whatever the text is going to be</p>
+                                <h3 class= "h6"><span class = "badge badge-primary">7 unread</span> <a href= "0">What are your favorite movie theories?</a></h3>
+                                <div class = "small">Go to Page: <a href = "#0">1</a><a href = "#0">2</a><a href = "#0">3</a> &hellip;  <a href = "#0">4</a></div>
                             </td>
                             <td>
-                                <div>5</div>
+                                <div>By: <a heref = "0">Author Name</a></div>
+                                <div>Date Jan 15, 1823</div>
+
                             </td>
                             <td>
-                                <div>18</div>
+                                <div>5 Replies</div>
+                                <div>183 Reviews</div>
                             </td>
                             <td>
-                                <h4 class="h6 mb-0 mb-0 font-weight-bold"><a href="#0">Post Name</a> </h4>
                                 <div>by: <a href = "#0">Author Name</ahref></div>
                                 <div> 05 April, 2020</div>
                             </td>
@@ -81,17 +86,19 @@
                     <tbody>
                         <tr>
                             <td>
-                                <h3 class="h5 mb-0"><a href= "0" class = "text-uppercase">Forum Name</a></h3>
-                                <p class = "mb-0">Whatever the text is going to be</p>
+                                <h3 class= "h6"><span class = "badge badge-primary">7 unread</span> <a href= "0">Who is your favorite Game of Thrones Character?</a></h3>
+                                <div class = "small">Go to Page: <a href = "#0">1</a><a href = "#0">2</a><a href = "#0">3</a> &hellip;  <a href = "#0">4</a></div>
                             </td>
                             <td>
-                                <div>5</div>
+                                <div>By: <a heref = "0">Author Name</a></div>
+                                <div>Date Jan 15, 1823</div>
                             </td>
                             <td>
-                                <div>18</div>
+                                <div>5 Replies</div>
+                                <div>183 Reviews</div>
                             </td>
                             <td>
-                                <h4 class="h6 mb-0 mb-0 font-weight-bold"><a href="#0">Post Name</a> </h4>
+                                
                                 <div>by: <a href = "#0">Author Name</ahref></div>
                                 <div> 05 April, 2020</div>
                             </td>
@@ -100,17 +107,19 @@
                     <tbody>
                         <tr>
                             <td>
-                                <h3 class="h5 mb-0"><a href= "0" class = "text-uppercase">Forum Name</a></h3>
-                                <p class = "mb-0">Whatever the text is going to be</p>
+                                <h3 class= "h6"><span class = "badge badge-primary">7 unread</span> <a href= "0">Who will be the next James Bond?</a></h3>
+                                <div class = "small">Go to Page: <a href = "#0">1</a><a href = "#0">2</a><a href = "#0">3</a> &hellip;  <a href = "#0">4</a></div>
                             </td>
                             <td>
-                                <div>5</div>
+                                <div>By: <a heref = "0">Author Name</a></div>
+                                <div>Date Jan 15, 1823</div>
                             </td>
                             <td>
-                                <div>18</div>
+                                <div>5 Replies</div>
+                                <div>183 Reviews</div>
                             </td>
                             <td>
-                                <h4 class="h6 mb-0 font-weight-bold"><a href="#0">Post Name</a> </h4>
+                                
                                 <div>by: <a href = "#0">Author Name</ahref></div>
                                 <div> 05 April, 2020</div>
                             </td>
