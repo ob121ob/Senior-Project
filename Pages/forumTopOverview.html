@@ -126,7 +126,54 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class = "mb-3 clearfix">
+                    <nav aria-label = "Navigate post pages" class="float-lg-right">
+                        <ul class="pagination pagination-sm mb-lg-0">
+                            <li class ="page-item"><a href= "#0" class ="page-link" >1 <span class = "sr-only">(current)</span></a></li>
+                            <li class ="page-item"><a href= "#0" class ="page-link" >2</a></li>
+                            <li class ="page-item"><a href= "#0" class ="page-link" >3</a></li>
+                            <li class ="page-item"><a href= "#0" class ="page-link" >4</a></li>
+                            <li class ="page-item"><a href= "#0" class ="page-link" >&hellip; 30</a></li>
+        
+                        </ul>
+                    </nav>
+                    <form class="form-inline float-lg-left d-block d-sm-flex">
+                        <div class="mb-2 mb-sm-0 mr-2">Display Posts from previous:</div>
+                        <div class="form-group mr-2">
+                            <label class = "sr-only" for="select-time">Time period</label>
+                            <select class= "form-control form-control-sm" id="select-time">
+                                <option value="all-posts" selected>All posts</option>
+                                <option value="all-posts">1 day</option>
+                                <option value="all-posts">1 week</option>
+                                <option value="all-posts">1 month</option>
+                                <option value="all-posts" >1 year</option>
+                            </select>
+                        </div>
+                        <div class="mb-2 mb-sm-0 mr-2">Sort By:</div>
+                        <div class="form-group mr-2">
+                            <label class = "sr-only" for="select-sort">Sort by:</label>
+                            <select class= "form-control form-control-sm" id="select-sort">
+                                <option value="author">Author</option>
+                                <option value="post-time">Post time</option>
+                                <option value="replies">Replies</option>
+                                <option value="subjects">Subjects</option>
+                                <option value="views" >Views</option>
+                            </select>
+                        </div>
+                        <div class="form-group mr-2">
+                            <label class = "sr-only" for="select-direction">Sort directions:</label>
+                            <select class= "form-control form-control-sm" id="select-direction">
+                                <option value="ascending" selected>Author</option>
+                                <option value="descending" selected>Post time</option>
+                            </select>
+                        </div>
+                        <button type = "submit" class = "btn btn-sm btn-primary">GO</button>
+                    </form>
+                </div>
+                <a href="#0" class = "btn btn-lg btn-primary">New Topic</a>
         </div>
+
+        
 
 
             <div class = "footer">
