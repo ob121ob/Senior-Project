@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <title> Forum, board overview</title>
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
         <style type = "text/css">
             .forum-col{
@@ -25,6 +27,7 @@
                 color: white;
                 text-align: center;
             }
+            
         </style>
 
 
@@ -42,22 +45,24 @@
             </div>
         </nav>
 
+
+
+        <!-- <h1>Forum Overview</h1>
+            <div class= "content">
+                <form id = "add-forum-form"></form>
+                <ul id = "Forum-list" class = "stripedlist"></ul>
+            </div>
+        -->
         <div class="container my-3">
             <nav class= "breadcrumb">
                 <a href="#0" class = "breadcrumb-item">Board Index</a>
                 <span class = "breadcrumb-item active"></span>
             </nav>
 
-            <h2 class = "h4 text-white bg-info mb-0 p-4 rounded-top">Forum Category</h2>
+            <h2 class = "h4 text-white bg-info mb-0 p-4 rounded-top">Forum Categories</h2>
                 <table class = "table table-striped table-bordered table-hover">
                     <thread class = "thread-light">
-                        <tr>
-                            <th scope = "col" class  = "forum-col">Forum</th>
-                            <th scope = "col">Topics</th>
-                            <th scope = "col">Posts</th>
-                            <th scope = "col" class  = "last-col">Last Post</th>
-
-                        </tr>
+                       
                     </thread>
                     <tbody>
                         <tr>
@@ -120,6 +125,8 @@
         </div>
 
 
+
+
             <div class = "footer">
                 <ul class= "list-inline">
                     <li class= "list-inline-item">All rights reserved</li>
@@ -129,7 +136,7 @@
 
     
 
-
+        
 
 
 
@@ -139,6 +146,23 @@
 
         <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAXwE4VY1yH278r_yzaPEftxzTSsL9JGl4",
+            authDomain: "sceneitall-571b3.firebaseapp.com",
+            databaseURL: "https://sceneitall-571b3.firebaseio.com",
+            projectId: "sceneitall-571b3",
+            storageBucket: "sceneitall-571b3.appspot.com",
+            messagingSenderId: "955672304924",
+            appId: "1:955672304924:web:7b2c384ffd32b784e9aed9",
+            measurementId: "G-VLP2JES1TF"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        </script>
+        <script src = "app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -35,10 +35,9 @@
           <p><a href="#">Interests</a></p>
           <p>
             <span class="label label-default">News</span>
-            <span class="label label-primary">W3Schools</span>
+            
             <span class="label label-success">Labels</span>
-            <span class="label label-info">Football</span>
-            <span class="label label-warning">Gaming</span>
+            
             <span class="label label-danger">Friends</span>
           </p>
         </div>
@@ -54,5 +53,14 @@
   </footer>
   
           
+  <script src ="/js/index.js"></script>
+        <script>
+            firebase.auth().onAuthStateChanged(function(user)
+            {
+                if(user){
+                    window.location.href = "Login.html";
+                }
+            });
+        </script>
 </body>
 </html>
