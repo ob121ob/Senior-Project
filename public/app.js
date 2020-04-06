@@ -30,6 +30,8 @@ db.collection("Forums").get().then((snapshot)=>{
 
 
 
+
+
 // var docRef = db.collection("Forums").doc("Movie theories");
 
 // docRef.get().then(function(doc) {

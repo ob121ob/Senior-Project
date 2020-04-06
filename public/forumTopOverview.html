@@ -11,6 +11,7 @@
         <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
         <style type = "text/css">
+
             .topic-col{
                 min-width:16em;
             }
@@ -29,6 +30,125 @@
                 color: white;
                 text-align: center;
             }
+            .list-inline-item{
+                width:100%;
+            }
+
+
+
+            body{
+    background-image: url("movies.jpg");
+    font-family: ubuntu;
+}
+
+ul{
+    list-style-type:none;
+    padding: 0;
+}
+
+li{
+    padding: 20px;
+    background: #f6f6f6;
+    font-size: 20px;
+    color: #555;
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+    height: 46px;
+}
+
+li:nth-child(even){
+    padding: 20px;
+    background: #f2f2f2;
+}
+
+li span{
+    display: block;
+    
+}
+
+li span:nth-child(2){
+    font-size: 16px;
+    margin-top: 6px;
+    color: #999;
+}
+
+li div{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    background: rgba(255,255,255,0.6);
+    width: 40px;
+    text-align: center;
+    padding: 10px 0;
+    font-weight:  bold;
+    cursor:  pointer;
+}
+li:hover{
+    color:blue;
+}
+
+form input{
+    float: left;
+    width: 38%;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #eee;
+    margin: 0 1%;
+    padding: 10px;
+    display: block;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+form input:focus{
+    outline: none;
+    border-bottom: 3px solid #88236f;
+    padding-bottom: 8px;
+    transition: all ease 0.2s;
+}
+
+form:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+button{
+    border: 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 13px;
+    width: 14%;
+    box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
+    font-weight: bold;
+    font-family: ubuntu;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </style>
 
 
@@ -53,30 +173,19 @@
                 <span class = "breadcrumb-item active">Forum Name</span>
             </nav>
 
-            <h2 class = "h4 text-white bg-info mb-0 p-4 rounded-top">Forum Name</h2>
-                <table class = "table table-striped table-bordered table-hover table-repsonsive-lg">
-                    <thread class = "thread-light">
-                        <tr>
-                            <th scope = "col" class = "topic-col">Topics</th>
-                            <th scope = "col" class = "created-col" >Created</th>
-                            <th scope = "col">Statistics</th>
-                            <th scope = "col" class  = "last-col">Last Post</th>
-
-                        </tr>
-                        <td>
-                            <div class ="content">
-                                <form id = "add-Forum-List"></form>
-                                <ul id = "Forum-list"></ul>
-                            </div>
-                        </td>
-                        
-                        
-                    </thread>
-
-                </table>
+            <h2 class = "h4 text-white bg-info mb-0 p-4 rounded-top" id= "classes">Forums</h2>
+            
+                <div class ="content">
+                    <form id = "add-Forum-List"></form>
+                    <ul id = "Forum-list" onclick="location.href='forumHome.html'"></ul>
+                                    
+                </div>
+                            
+                     
+            
 
         
-    </div>
+        </div>
 
             <div class = "footer">
                 <ul class= "list-inline">
