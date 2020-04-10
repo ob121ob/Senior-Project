@@ -13,12 +13,55 @@
 
         <style type = "text/css">
             
-            .author-col{
-                min-width:12em;
+            /* body{
+                background-image: url("movies.jpg");
+                font-family: ubuntu;
+            } */
+          
+           
+            div.content1{
+                background: #f6f6f6;
             }
-            .post-col{
-                min-width:20em;
+            ul{
+                    list-style-type:none;
+                    padding: 0;
+                }
+            
+            li{
+                padding: 20px;
+                list-style-type:none;
+                background: #f6f6f6;
+                font-size: 20px;
+                color: #555;
+                position: relative;
+                border-bottom: 1px solid #e6e6e6;
+                height: 46px;
             }
+
+            li:nth-child(even){
+                padding: 20px;
+                background: #f2f2f2;
+            }
+
+       
+            li span:nth-child(2){
+                font-size: 16px;
+                margin-top: 6px;
+                color: #999;
+            }
+
+            li div{
+                position: absolute;
+                top: 0;
+                right: 0px;
+                background: rgba(255,255,255,0.6);
+                width: 40px;
+                text-align: center;
+                padding: 10px 0;
+                font-weight:  bold;
+                cursor:  pointer;
+            }
+          
             .footer {
                 position: fixed;
                 left: 0;
@@ -52,6 +95,14 @@
                 <a href="#0" class = "breadcrumb-item">Forum Name</a>
                 <span class = "breadcrumb-item active">Forum Post</span>
             </nav>
+
+
+            <div class ="content1" id = "content1-class">
+                <ul id = "Forum-list" > </ul>         
+            </div>
+            <div class ="content" id = "content-class">
+                <ul id = "Forum-list" > </ul>         
+            </div>
             
 
         
@@ -71,43 +122,14 @@
 
 
 
-
-                <form class = "mb-3">
-                    <div class= "form-group">
-                        <label for = "comment">Reply to this post</label>
-                        <textarea class ="form-control" id= "comment" rows = "7" placeholder = "write your comment here" required ></textarea>
-                    </div>
-                    <button type = "submit" class= "btn btn-primary">reply</button>
-                    <button type = "reset" class= " btn btn-danger">Reset</button>
+            <div class= "form-group">
+                <form id = "add-comment-form">
+                    <input type = "text" name = "comment" placeholder = "write a comment here">
+                     <button>add comment</button>
                 </form>
-                <div>
-                    <div class= 'd-lg-flex align-items-lg-center mb-3'>
-                        <form class= "form-inline d-block d-sm-flex mr-2 mb-3">
-                        <div class ="form-group mr-2 mb-3 mb-md-0">
-                            <label for = "email" class  = "mr-2">Email:</label>
-                            <input type = "email" class = "form-control" placeholder = "example@email.com" id = "email" required>
-                        </div>
-                        <div class ="form-group mr-2 mb-3 mb-md-0">
-                            <label for = "password" class  = "mr-2">Password:</label>
-                            <input type = "password" class = "form-control"  id = "password" required>
-                        </div>
-                        <button type = "submit" class= "btn btn-primary">Login</button>
-                        </form>
-                        <span class = mr-2>or.....</span>
-                        <a href = "#0" class = "btn btn-success">Create an Account</a>
-                    </div>
-                </div>
-        </div>
-
-    
-
-
-            <div class = "footer">
-                <ul class= "list-inline">
-                    <li class= "list-inline-item">All rights reserved</li>
-                </ul>
-
             </div>
+               
+        </div>
 
     
 
@@ -139,6 +161,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src = "post.js"></script>
     </body>
 
 
