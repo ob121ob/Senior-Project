@@ -115,7 +115,7 @@ form:after{
 
 button{
     border: 0;
-    background: #fff;
+    background: rgb(190, 163, 163);
     border-radius: 10px;
     padding: 13px;
     width: 14%;
@@ -127,38 +127,17 @@ button{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </style>
 
 
     </head>
     
     <body>
+        
         <!--This is the navbar, lets just keep to a search and maybe one link later, come bacl to this and link homepage!!!!!!!!-->
         <nav class="navbar navbar-dark bg-dark">
             <div class = "container">
-                <h1><a href=""class= "navbar-brand">Forum</a></h1>
+                <h1><a href=""class= "navbar-brand">SceneItAll</a></h1>
                 <form class="form-inline">
                     <input type="text" class = "form-control mr-3" placeholder="Search">
                     <button type="submit" class="btn btn-primary">Search</button>      
@@ -170,14 +149,17 @@ button{
             <nav class= "breadcrumb">
                 <a href="#0" class = "breadcrumb-item">Board Index</a>
                 <a href="#0" class = "breadcrumb-item">Forum Category</a>
-                <span class = "breadcrumb-item active">Forum Name</span>
+                
             </nav>
 
-            <h2 class = "h4 text-white bg-info mb-0 p-4 rounded-top" id= "classes">Forums</h2>
+            <h2 class = "h4 text-white bg-info mb-0 p-4 rounded-top" id= "classes">Topics</h2>
             
                 <div class ="content">
-                    <form id = "add-Forum-List"></form>
-                    <ul id = "Forum-list" onclick="location.href='forumHome.html'"></ul>
+                    <form id = "add-Forum-List">
+                        <input type = "text" name ="topic" placeholder = "Topic name">
+                        <button>Add Topic</button>
+                    </form>
+                    <ul id = "Forum-list" a href = "post.html?setItem" > </ul>
                                     
                 </div>
                             

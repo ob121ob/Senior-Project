@@ -1,46 +1,100 @@
 const forumList = document.querySelector("#Forum-list");
+const form = document.querySelector("#add-Forum-List");
+var setItem = "";
 
 function renderForum(doc){
     let li = document.createElement("li");
-    let comment = document.createElement("span");
-    let comment2 = document.createElement("span");
+    let name = document.createElement("span");
+    //let comment2 = document.createElement("span");
 
     li.setAttribute("data-id",doc.id);
-    comment.textContent = doc.data().comment;
-    comment2.textContent = doc.data().comment2;
+    name.textContent = doc.data().name;
+
+    //comment2.textContent = doc.data().comment2;
     
-    li.appendChild(comment);
-    li.appendChild(comment2);
+    li.appendChild(name);
+    //li.appendChild(comment2);
 
     forumList.appendChild(li);
+
+    
+    
+    
+
 }
 
-db.collection("Forums").get().then((snapshot)=>{
-    snapshot.docs.forEach(doc => {
+function renderList(doc){
+    let li = document.createElement("li");
+    let name = document.createElement("span");
+    //let comment2 = document.createElement("span");
+
+    li.setAttribute("data-id",doc.id);
+    name.textContent = doc.data().name;
+    //comment2.textContent = doc.data().comment2;
+    
+    
+    //li.appendChild(comment2);
+    var setItem = name;
+    //console.log(setItem);
+    return setItem;
+
+    
+    
+
+}
+
+db.collection("ForumNames").get().then((snapshot)=>{
+    snapshot.docs.forEach(doc => {  
         renderForum(doc);
+        
+    
     })
-})
+    var matches = document.querySelectorAll("span");
+        console.log(matches);
+        for (var i = matches.length; i--; ) {
+            console.log(matches[i]);
+
+            var linker = matches[i].textContent;
+            var a = document.createElement('a');
+            a.href = "post.html?" + linker; // this works for appending to url
+            matches[i].appendChild(a).appendChild(a.previousSibling);
+        }
+});
 
 
 
 
 
-
-
-
-
-
-
-
-// var docRef = db.collection("Forums").doc("Movie theories");
-
-// docRef.get().then(function(doc) {
-//     if (doc.exists) {
-//         console.log("Document data:", doc.data());
-//     } else {
-//         // doc.data() will be undefined in this case
-//         console.log("No such document!");
-//     }
-// }).catch(function(error) {
-//     console.log("Error getting document:", error);
+// db.collection("ForumNames").get().then((snapshot)=>{
+//     snapshot.docs.forEach(doc => {  
+//         var listitem1 = renderList(doc);
+//         console.log(listitem1);
+//     })
+    
 // });
+
+// var span = document.getElementById("Forum-list");
+// span.onclick = function(event){
+//     console.log(renderList(listitem1));
+    
+// }
+
+
+
+//save data
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    db.collection('ForumNames').add({
+        name: form.topic.value
+    });
+    form.topic.value = '';
+});
+
+
+
+
+
+
+
+
+
