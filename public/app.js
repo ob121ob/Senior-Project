@@ -1,6 +1,17 @@
 const forumList = document.querySelector("#Forum-list");
 const form = document.querySelector("#add-Forum-List");
 var setItem = "";
+/// this will get the forum name
+var query = window.location.search.substring(1); // grab URL variable
+// console.log(query);
+var newquery = query.replace(/%20/g, " ");
+
+console.log(newquery);
+localStorage.setItem("forumName",newquery);
+// forum name
+
+
+
 
 function renderForum(doc){
     let li = document.createElement("li");
@@ -41,14 +52,15 @@ function renderList(doc){
 
 }
 
-db.collection("MoviesForum").get().then((snapshot)=>{
+db.collection(newquery).get().then((snapshot)=>{
     snapshot.docs.forEach(doc => {  
         renderForum(doc);
         
     
     })
+    //this will add the variable to the url
     var matches = document.querySelectorAll("span");
-        console.log(matches);
+        //console.log(matches);
         for (var i = matches.length; i--; ) {
             console.log(matches[i]);
 
@@ -83,7 +95,8 @@ db.collection("MoviesForum").get().then((snapshot)=>{
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     var newvari = form.topic.value;
-    db.collection("MoviesForum").doc(newvari).set({
+    // this has to be done this way to prevent the randon generated num
+    db.collection(newquery).doc(newvari).set({
         name: form.topic.value
     })
     // db.collection('MoviesForum').add({

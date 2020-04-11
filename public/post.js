@@ -10,6 +10,10 @@ var newquery = query.replace(/%20/g, " ");
 
 console.log(newquery);
 
+// grab forum
+var forumname = localStorage.getItem("forumName");
+console.log(forumname);
+
 
 function renderForum(doc){
     let li = document.createElement("li");
@@ -30,7 +34,7 @@ function renderForum(doc){
 /////////////////////////////////////////////////////////
 function renderTopic(doc){
     let li = document.createElement("ul");
-    let name = document.createElement("h4");
+    let name = document.createElement("h2");
     let description = document.createElement("p");
 
     li.setAttribute("data-id",doc.id);
@@ -45,7 +49,7 @@ function renderTopic(doc){
 }
 ////////////////////////////////////////////////////////////
 // this generates all the topics into a deoRef which i can use
-var docRef = db.collection("MoviesForum").doc(newquery);
+var docRef = db.collection(forumname).doc(newquery);
 docRef.get().then(function(doc) {
     if (doc.exists) {
         renderTopic(doc);
@@ -60,7 +64,7 @@ docRef.get().then(function(doc) {
 /////////////////////////////////////////////////////////////
 // get the data from a collection
 
-var docRef2 = db.collection("MoviesForum").doc(newquery).collection("commentsCollection");
+var docRef2 = db.collection(forumname).doc(newquery).collection("commentsCollection");
 docRef2.get()
 .then(Snapshot => {
     Snapshot.docs.forEach(doc => {
@@ -72,7 +76,7 @@ docRef2.get()
 // save a comment
 form.addEventListener('submit', (e) => {
     e.preventDefault();    
-    db.collection("MoviesForum").doc(newquery).collection("commentsCollection").add({
+    db.collection(forumname).doc(newquery).collection("commentsCollection").add({
         comment: form.comment.value
     });
     form.comment.value = '';

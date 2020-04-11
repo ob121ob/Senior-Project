@@ -9,8 +9,8 @@
         <title> Forum, board overview</title>
         <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
-
         <style type = "text/css">
+         
             .forum-col{
                 min-width:16em;
 
@@ -55,7 +55,7 @@
         -->
         <div class="container my-3">
             <nav class= "breadcrumb">
-                <a href="#0" class = "breadcrumb-item">Board Index</a>
+                <a href="forumHome.html" class = "breadcrumb-item">Forums</a>
                 <span class = "breadcrumb-item active"></span>
             </nav>
 
@@ -67,58 +67,28 @@
                     <tbody>
                         <tr>
                             <td>
-                                <h3 class= "h5 mb-0"><a href =forumTopOverview.html id= "myLink" class="text-uppercase">Movie Forums</a></h3>
+                                <h3 class= "h5 mb-0"><a id= "link1" class="text-uppercase">Movie Forums</a></h3>
                                 <p class = "mb-0">A place to talk about anything and everything related to T.V</p>
                             </td>
-                            <td>
-                                <div>5</div>
-                            </td>
-                            <td>
-                                <div>18</div>
-                            </td>
-                            <td>
-                                <h4 class="h6 mb-0 mb-0 font-weight-bold"><a href="#0">Post Name</a> </h4>
-                                <div>by: <a href = "#0">Author Name</ahref></div>
-                                <div> 05 April, 2020</div>
-                            </td>
+                           
                         </tr>
                     </tbody>
                     <tbody>
                         <tr>
                             <td>
-                                <h3 class="h5 mb-0"><a href= "0" class = "text-uppercase">T.V Forums</a></h3>
+                                <h3 class="h5 mb-0"><a id= "link2" class = "text-uppercase">T.V Forums</a></h3>
                                 <p class = "mb-0">Forums for everything regarding movies and cinema.</p>
                             </td>
-                            <td>
-                                <div>5</div>
-                            </td>
-                            <td>
-                                <div>18</div>
-                            </td>
-                            <td>
-                                <h4 class="h6 mb-0 mb-0 font-weight-bold"><a href="#0">Post Name</a> </h4>
-                                <div>by: <a href = "#0">Author Name</ahref></div>
-                                <div> 05 April, 2020</div>
-                            </td>
+                            
                         </tr>
                     </tbody>
                     <tbody>
                         <tr>
                             <td>
-                                <h3 class="h5 mb-0"><a href= "0" class = "text-uppercase">Miscellaneous</a></h3>
+                                <h3 class="h5 mb-0"><a id = "link3" class = "text-uppercase">Miscellaneous</a></h3>
                                 <p class = "mb-0">This is for any topics that dont fall into the movie or tv forums.</p>
                             </td>
-                            <td>
-                                <div>5</div>
-                            </td>
-                            <td>
-                                <div>18</div>
-                            </td>
-                            <td>
-                                <h4 class="h6 mb-0 font-weight-bold"><a href="#0">Post Name</a> </h4>
-                                <div>by: <a href = "#0">Author Name</ahref></div>
-                                <div> 05 April, 2020</div>
-                            </td>
+                            
                         </tr>
                     </tbody>
                 </table>
@@ -141,7 +111,23 @@
 
 
 
-
+    <script>
+        //Movie Forums link
+        var scrt_var = "MoviesForum";
+        var strLink = "ForumTopOverView.html?" + scrt_var;
+        //console.log(strLink);
+        document.getElementById("link1").setAttribute("href",strLink);
+        // TV Forums Link
+        var scrt_var2 = "TvForum";
+        var strLink2 = "ForumTopOverView.html?" + scrt_var2;
+        console.log(strLink2);
+        document.getElementById("link2").setAttribute("href",strLink2);
+        //Misc Forums Link
+        var scrt_var3 = "MiscForums";
+        var strLink3 = "ForumTopOverView.html?" + scrt_var3;
+        console.log(strLink3);
+        document.getElementById("link3").setAttribute("href",strLink3);
+    </script>
 
 
         <!-- Optional JavaScript -->
@@ -162,7 +148,7 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
         </script>
-        <script src = "post.js"></script>
+        <!-- <script src = "post.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
