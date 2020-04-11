@@ -16,8 +16,6 @@ function renderForum(doc){
     //li.appendChild(comment2);
 
     forumList.appendChild(li);
-
-    
     
     
 
@@ -43,7 +41,7 @@ function renderList(doc){
 
 }
 
-db.collection("ForumNames").get().then((snapshot)=>{
+db.collection("MoviesForum").get().then((snapshot)=>{
     snapshot.docs.forEach(doc => {  
         renderForum(doc);
         
@@ -84,9 +82,13 @@ db.collection("ForumNames").get().then((snapshot)=>{
 //save data
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    db.collection('ForumNames').add({
+    var newvari = form.topic.value;
+    db.collection("MoviesForum").doc(newvari).set({
         name: form.topic.value
-    });
+    })
+    // db.collection('MoviesForum').add({
+    //     name: form.topic.value
+    // });
     form.topic.value = '';
 });
 

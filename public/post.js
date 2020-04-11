@@ -6,9 +6,9 @@ const form = document.querySelector("#add-comment-form");
 
 var query = window.location.search.substring(1); // grab URL variable
 // console.log(query);
-var newquery = query.replace(/%20/g, "");
+var newquery = query.replace(/%20/g, " ");
 
-//console.log(newquery);
+console.log(newquery);
 
 
 function renderForum(doc){
@@ -44,21 +44,24 @@ function renderTopic(doc){
     //console.log(topicList);
 }
 ////////////////////////////////////////////////////////////
-
-var docRef = db.collection("ForumNames").doc(newquery);
+// this generates all the topics into a deoRef which i can use
+var docRef = db.collection("MoviesForum").doc(newquery);
 docRef.get().then(function(doc) {
     if (doc.exists) {
         renderTopic(doc);
     } else {
-        // doc.data() will be undefined in this case
+        
         console.log("No such document!");
+        
     }
 }).catch(function(error) {
     console.log("Error getting document:", error);
 });
 /////////////////////////////////////////////////////////////
 // get the data from a collection
-db.collection("ForumNames").doc(newquery).collection("CommentsCollection").get()
+
+var docRef2 = db.collection("MoviesForum").doc(newquery).collection("commentsCollection");
+docRef2.get()
 .then(Snapshot => {
     Snapshot.docs.forEach(doc => {
         renderForum(doc);
@@ -69,7 +72,7 @@ db.collection("ForumNames").doc(newquery).collection("CommentsCollection").get()
 // save a comment
 form.addEventListener('submit', (e) => {
     e.preventDefault();    
-    db.collection("ForumNames").doc(newquery).collection("CommentsCollection").add({
+    db.collection("MoviesForum").doc(newquery).collection("commentsCollection").add({
         comment: form.comment.value
     });
     form.comment.value = '';
