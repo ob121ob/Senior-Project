@@ -1,39 +1,38 @@
-<!DOCTYPE html>
-<html lang = "en" dir = "ltr">
+
+<html>
     <head>
-        <meta charset="utf-8">
-        <title>Login Form</title>
-        <link rel = "stylesheet" href = "login.css">
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
- 
+      <title>SceneItAll</title>
+      <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+      <link rel="stylesheet" href="login.css" />
     </head>
-    
     <body>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-3">SceneItAll</h1>
-                
-            </div>
-        </div>
+    
+      <div id="login_div" class="main-div">
+        <h3>Scene It All</h3>
+        <input type="email" placeholder="Email..." id="email_field" />
+        <input type="password" placeholder="Password..." id="password_field" />
+     <button onclick="login()">Login to Account</button> 
+     <button onclick="signUp()">Register</button>
+      </div>
+    
+      <div id="user_div" class="loggedin-div">
+        <h3>Welcome User</h3>
+        <p id="user_para">You're currently logged in.</p>
+        <button onclick= "window.location.href='/Senior-Project/public/homepage.html';">Enter Site</button>
+        <button onclick="logout()">Logout</button>
+
+      </div>
 
 
-        <form class="login" action = "homepage.html" method = "post">
-            <h1>LOGIN</h1>
-            <input type="text" class = "form-control" input id ="email" name ="Username" placeholder="Username"required>
-            <input type="password" class = "form-control" input id = "password" name = "Password" placeholder="Password"required>
-            <input type="submit" button id = "login_button" name = "SubmitBtn" placeholder="Login">
-            <Footer>
-                <a href = signup.html>Not a member yet? Sign up here!</a>
-            </Footer>
-        </form>
-
-        
-
-        <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
+      
+      
+    
+    
+    
+      <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
             apiKey: "AIzaSyAXwE4VY1yH278r_yzaPEftxzTSsL9JGl4",
             authDomain: "sceneitall-571b3.firebaseapp.com",
             databaseURL: "https://sceneitall-571b3.firebaseio.com",
@@ -43,16 +42,9 @@
             appId: "1:955672304924:web:7b2c384ffd32b784e9aed9",
             measurementId: "G-VLP2JES1TF"
         };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-        </script>
-        <script src = "app.js"></script>
-
+        firebase.initializeApp(config);
+      </script>
+      <script src="login.js"></script>
+    
     </body>
-
-
-
-
-</html>
-
+    </html>

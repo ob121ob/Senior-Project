@@ -5,58 +5,54 @@ body {
     background:#DC143C
 }
 
-.login{
-    width: 300px;
-    padding:40px;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    background: #A9A9A9;
-    text-align: center;
-    border-radius: 24px;
-
-}
-.login input[type = "text"], .login input[type = "password"]{
-    border:0;
-    background: none;
+input, button {
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+  }
+  
+  .main-div, .loggedin-div {
+    width: 20%;
+    margin: 0px auto;
+    margin-top: 150px;
+    padding: 20px;
+    display: none;
+  }
+  
+  .main-div input {
     display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid lightskyblue;
-    width:250px;
-    padding: 14px 10px;
-    border-radius: 24px;
-    color: white;
-    transition: .25s;  
-}
-.login input[type = "submit"]{
-    border:0;
-    background: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+  }
+  
+  .main-div input:focus {
+    border: 1px solid #777;
+  }
+  
+  .main-div button, .loggedin-div button {
+    background: #5d8ffc;
+    color: #fff;
+    border: 1px solid #5d8ffc;
+    border-radius: 5px;
+    padding: 15px;
     display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid lightskyblue;
-    width:250px;
-    padding: 14px 40px;
-    border-radius: 24px;
-    color: white;
-    transition: .25s;
+    width: 100%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+  }
+  
+  .main-div button:hover, .loggedin-div button:hover {
+    background: #fff;
+    color: #5d8ffc;
+    border: 1px solid #5d8ffc;
     cursor: pointer;
-
-}
-.login input[type = "text"]:hover,.login input[type = "password"]:hover{
-    width:280px;
-    border-color: #00FFFF;
-
-}
-.login input[type = "submit"]:hover{
-    background: #00FFFF;
-}
-.login h1{
-    color: white;
-    font-weight: 500;
-    
-}
-
-
+  }
+  
