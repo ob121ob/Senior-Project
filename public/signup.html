@@ -5,11 +5,9 @@
         <title>Login Form</title>
         <link rel = "stylesheet" href = "signup.css">
 
-<!--        <script src="/__/firebase/7.11.0/firebase-app.js"></script>
+        <script src="/__/firebase/7.11.0/firebase-app.js"></script>
         <script src="/__/firebase/7.11.0/firebase-auth.js"></script>
-        <script src="/__/firebase/7.11.0/firebase-database.js"></script>
-        <script src="/__/firebase/7.11.0/firebase-storage.js"></script>
--->
+        <script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
     </head>
     <body>
         <div class="jumbotron jumbotron-fluid">
@@ -20,16 +18,56 @@
         </div>
 
 
-        <!--<form class="login">-->
+    <div class = "hero">
+        <div class="form-box">
+            <div class = "button-box">
+                <div id = "btn"></div>
+                <button type = "button" class = "toggle-btn" onClick="login()">Log in</button>
+                <button type = "button" class = "toggle-btn" onClick="register()">Register</button>
+            </div>
+            <!--This is the form for a user who already exists-->
+            <form id = "login" class= "input-group">
+                <input type = "email" id = "sign-in-email" class = "input-field" placeholder= "email" required>
+                <input type = "text" id  = "pw-login" class = "input-field" placeholder= "Enter Password" required>
+                <input type = "checkbox" class = "check-box"><span>Remember password</span>
+                <Button type = "submit" class = "submit-btn">Login</button>
+            </form>
+            <!--This is the form for a user who does not exist -->
+            <form id = "register" class= "input-group">
+                <input type = "email" id  = "register-email"class = "input-field" placeholder= "Email" required>
+                <input type = "text" id = "pw1" class = "input-field" placeholder= "Enter Password" required>
+                <input type = "text" id = "pw2" class = "input-field" placeholder= "Enter Password Again" required>
+                <input type = "checkbox" class = "check-box"><span>Remember password</span>
+                <Button type = "submit" class = "submit-btn">Register</Button>
+            </form>
+
+        </div>
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--      
             <h1>Sign-Up</h1>
             <input type="email" id = "email_sfield" placeholder="Email"/>
             <input type="password" id= "password_sfield" placeholder="Enter a Password"/>
             <button onclick="signUp()">Sign Up</button>
             
-        <!--</form>-->
+       
         <Footer>
             <a href =index.html>Already a Member?</a>
-        </Footer>
+        </Footer> -->
 
 
         <script>
@@ -45,10 +83,37 @@
                 measurementId: "G-VLP2JES1TF"
             };
             // Initialize Firebase
-            firebase.initializeApp(config);
+            firebase.initializeApp(firebaseConfig);
+
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+
+
+
+            
             
             </script>
+
             
-            <script src = "login.js"></script>
+            <script src = "signup.js"></script>
+             <!-- Compiled and minified JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+            <script>
+                var x = document.getElementById("login");
+                var y = document.getElementById("register");
+                var z = document.getElementById("btn");
+
+                function register(){
+                    x.style.left = "-400px";
+                    y.style.left = "50px";
+                    z.style.left = "110px";
+                }
+                function login(){
+                    x.style.left = "50px";
+                    y.style.left = "450px";
+                    z.style.left = "0px";
+                }
+            </script>
     </body>
 </html>
