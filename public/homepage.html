@@ -19,10 +19,12 @@
       <a class="navbar-brand" href="#">SceneItAll</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="homepage.html">Home</a></li>
       <li><a href="#">Friends</a></li>
-      <li><a href="#">Forum</a></li>
-      <li><a href="#">Link ?</a></li>
+      <li><a href="forumHome.html">Forums</a></li>
+      <li><a id="myLink" title="LOGOUT"
+        href="index.html" onclick="logout();">LOGOUT</a></li>
+      
     </ul>
   </div>
 </nav>
@@ -78,16 +80,6 @@
     
     </script>
   
-          
-        <script>
-            firebase.auth().onAuthStateChanged(function(user)
-            {
-                if(user){
-                    window.location.href = "index.html";
-                }
-            });
-        </script>
-
-
+  <script src = "checkUser.js"></script>
 </body>
 </html>
