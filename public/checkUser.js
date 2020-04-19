@@ -1,8 +1,10 @@
-
+var currentUser;
 firebase.auth().onAuthStateChanged(function(user)
 {
     if(user){
-        console.log(user);
+        console.log(user.uid);
+        currentUser = user.uid;
+
     }
     else{
       console.log("imhere");
@@ -11,5 +13,9 @@ firebase.auth().onAuthStateChanged(function(user)
 });
 
 function logout(){
-  firebase.auth().signOut();
+  if (firebase.auth().currentUser){
+    firebase.auth().signOut();
+
+  }
+
 }
