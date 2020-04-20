@@ -9,17 +9,25 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     var errorMessage = error.message;
   });
 
+  
+
+  var redirect = function(url, method) {
+    var form = document.createElement('form');
+    document.body.appendChild(form);
+    form.method = method;
+    form.action = url;
+    form.submit();
+    };
 
 auth.onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
         console.log(user);
+
     
-        var user = firebase.auth().currentUser;
         // mov them to thir homepage....
         redirect("/homepage.html");
-        localStorage.setItem("user",user);
-    
+       
     } 
     else {
         // No user is signed in.
@@ -27,7 +35,7 @@ auth.onAuthStateChanged(function(user) {
     
       }
 
-})
+});
  
   
 
@@ -40,13 +48,34 @@ registerform.addEventListener("submit",(e)=>{
 
     // this grabs the user info
     const email = registerform["register-email"].value;
+    const firstPass = registerform["pw1"].value; 
     const password = registerform["pw2"].value;
 
-    //console.log(email, password);
+    console.log(firstPass);
+    console.log(password);
 
-    auth.createUserWithEmailAndPassword(email,password).then(cred =>{
-        console.log(cred.user);
+
+    if(firstPass != password){
+      console.log("passwords dont match");
+      window.alert("Your Passwords did not match");
+
+    }
+    else{
+      auth.createUserWithEmailAndPassword(email,password).then(cred =>{
+        // console.log("imhere1");
+        // var user = firebase.auth().currentUser;
+        // console.log(user);
+        return db.collection("users").doc(cred.user.uid).collection("showlist").doc('testshow').set({
+          title: "title",
+          released: "released",
+          genre: "genre",
+          plot: "plot"
+        })
+        redirect("/homepage.html");
+
     })
+
+    }//else
 })
 
 
@@ -71,43 +100,48 @@ loginForm.addEventListener("submit",(e)=>{
       });
 })
 
-function initApp() {
-    // Listening for auth state changes
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-          //create table for new user
-          if(user){
-            var db = firebase.firestore();
-            db.collection("users").doc(user.uid).collection('showlist')
-            .doc('testshow').set({
-              title: "title",
-              released: "released",
-              genre: "genre",
-              plot: "plot"
-            })
-            .then(function() {
-                console.log("Document successfully written!");
-            })
-            .catch(function(error) {
-                console.error("Error writing document: ", error);
-            });
-          }
 
-          var redirect = function(url, method) {
-          var form = document.createElement('form');
-          document.body.appendChild(form);
-          form.method = method;
-          form.action = url;
-          form.submit();
-          };
-          // location = '/temp.html';
-          redirect('/homepage.html', 'post');
-      } 
+
+
+// this will add to the ud
+// function initApp() {
+//     // Listening for auth state changes
+//     firebase.auth().onAuthStateChanged(function(user) {
+//       if (user) {
+//           //create table for new user
+//           if(user){
+//             var db = firebase.firestore();
+//             db.collection("users").doc(user.uid).collection('showlist')
+//             .doc('testshow').set({
+//               title: "title",
+//               released: "released",
+//               genre: "genre",
+//               plot: "plot"
+//             })
+//             .then(function() {
+//                 console.log("Document successfully written!");
+//             })
+//             .catch(function(error) {
+//                 console.error("Error writing document: ", error);
+//             });
+//           }
+
+//           var redirect = function(url, method) {
+//           var form = document.createElement('form');
+//           document.body.appendChild(form);
+//           form.method = method;
+//           form.action = url;
+//           form.submit();
+//           };
+//           // location = '/temp.html';
+//           console.log("im all the way down");
+//           redirect('/homepage.html', 'post');
+//       } 
       
-    });}
-    window.onload = function() {
-        initApp();
-      };
+//     });}
+//     window.onload = function() {
+//         initApp();
+//       };
 
 
 
