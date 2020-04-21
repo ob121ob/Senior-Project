@@ -7,9 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="/__/firebase/7.11.0/firebase-app.js"></script>
-  <script src="/__/firebase/7.11.0/firebase-auth.js"></script>
-  <script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
+  
 </head>
 <body>
 
@@ -54,32 +52,62 @@
    
   
   <footer class="container-fluid">
-    <p>Footer Text</p>
-  </footer>
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyAXwE4VY1yH278r_yzaPEftxzTSsL9JGl4",
-        authDomain: "sceneitall-571b3.firebaseapp.com",
-        databaseURL: "https://sceneitall-571b3.firebaseio.com",
-        projectId: "sceneitall-571b3",
-        storageBucket: "sceneitall-571b3.appspot.com",
-        messagingSenderId: "955672304924",
-        appId: "1:955672304924:web:7b2c384ffd32b784e9aed9",
-        measurementId: "G-VLP2JES1TF"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-  
-  
-  
+    <div id="search" class="container">
+      <h4><br>Search for a TV Show or Movie to Add...</h4>
+        <div class="input-group mb-3 col-5">
+            <input type="text" class="form-control" placeholder="Search" id='searchbar'>
+            <div class="input-group-append">
+              <button class="btn btn-outline-dark" id='search-button'>Add</button>
+            </div>
+        </div>
+  </div>
+  <div id="list" class="container">
+      
+    <div id="head" class="header">
+        <h4>Watchlist</h4>
+    </div>
+
+      <ul id="myUL">
+          <!-- <li class="checked">
+                Show<br> 
+                Released: <br>
+                Genre:<br>
+                Plot: <br>
+          </li> -->
+        </ul>
+</div>
     
-    
-    </script>
   
-  <script src = "checkUser.js"></script>
 </body>
 </html>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+      apiKey: "AIzaSyAXwE4VY1yH278r_yzaPEftxzTSsL9JGl4",
+      authDomain: "sceneitall-571b3.firebaseapp.com",
+      databaseURL: "https://sceneitall-571b3.firebaseio.com",
+      projectId: "sceneitall-571b3",
+      storageBucket: "sceneitall-571b3.appspot.com",
+      messagingSenderId: "955672304924",
+      appId: "1:955672304924:web:7b2c384ffd32b784e9aed9",
+      measurementId: "G-VLP2JES1TF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+
+
+  
+  
+  </script>
+  <script src="/__/firebase/7.11.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.11.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.11.0/firebase-database.js"></script>
+<script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
+<script src="/__/firebase/init.js"></script>
+
+<script src = "checkUser.js"></script>
