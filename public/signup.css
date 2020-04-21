@@ -1,3 +1,10 @@
+.header {
+    padding: 20px;
+    text-align: center;
+    background: black;
+    color: white;
+    font-size: 18px;
+  }
 *{
     margin:0;
     padding:0;
@@ -7,8 +14,7 @@
 .hero{
     height: 100%;
     width: 100%;
-    background-image:"#";
-    background-color: lightpink;
+    background-image: url('movie.jpg');;
     background-position: center;
     background-size:cover;
     position: absolute;
@@ -16,11 +22,12 @@
 }
 
 .form-box{
+    border-radius: 25px;
     width: 380px;
     height: 480px;
     position:relative;
     margin: 6% auto;
-    background: #fff;
+    background: lightgrey;
     padding:5px;
     overflow: hidden;
 

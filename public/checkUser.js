@@ -1,9 +1,9 @@
-var currentUser;
+var currentUserID;
 firebase.auth().onAuthStateChanged(function(user)
 {
     if(user){
         console.log(user.uid);
-        currentUser = user.uid;
+        currentUserID = user.uid;
 
     }
     else{
@@ -17,7 +17,7 @@ function logout(){
     firebase.auth().signOut();
 
   }
-
+}
   document.getElementById('search-button').addEventListener('click', apiCall, false);
 
 function apiCall(){
@@ -174,4 +174,3 @@ function updateDatabase(title, check){
 
 }
 
-}

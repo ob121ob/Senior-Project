@@ -23,10 +23,10 @@ auth.onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
         console.log(user);
-
+        window.location = "/homepage.html"
     
         // mov them to thir homepage....
-        redirect("/homepage.html");
+        //redirect("/homepage.html");
        
     } 
     else {
@@ -65,13 +65,13 @@ registerform.addEventListener("submit",(e)=>{
         // console.log("imhere1");
         // var user = firebase.auth().currentUser;
         // console.log(user);
+
         return db.collection("users").doc(cred.user.uid).collection("showlist").doc('testshow').set({
           title: "title",
           released: "released",
           genre: "genre",
           plot: "plot"
         })
-        redirect("/homepage.html");
 
     })
 

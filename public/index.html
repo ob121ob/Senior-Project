@@ -11,12 +11,10 @@
         <script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
     </head>
     <body>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-3">SceneItAll</h1>
-                
-            </div>
-        </div>
+        
+        <div class="header">
+            <h1>SceneItAll</h1>
+          </div>
 
 
     <div class = "hero">
@@ -29,14 +27,14 @@
             <!--This is the form for a user who already exists-->
             <form id = "login" class= "input-group">
                 <input type = "email" id = "sign-in-email" class = "input-field" placeholder= "email" required>
-                <input type = "text" id  = "pw-login" class = "input-field" placeholder= "Enter Password" required>
+                <input type = "password" id  = "pw-login" class = "input-field" placeholder= "Enter Password" required>
                 <Button type = "submit" class = "submit-btn">Login</button>
             </form>
             <!--This is the form for a user who does not exist -->
             <form id = "register" class= "input-group">
                 <input type = "email" id  = "register-email"class = "input-field" placeholder= "Email" required>
-                <input type = "text" id = "pw1" class = "input-field" placeholder= "Enter Password" required>
-                <input type = "text" id = "pw2" class = "input-field" placeholder= "Enter Password Again" required>
+                <input type = "password" id = "pw1" class = "input-field" placeholder= "Enter Password" required>
+                <input type = "password" id = "pw2" class = "input-field" placeholder= "Enter Password Again" required>
                 <Button type = "submit" class = "submit-btn">Register</Button>
             </form>
 
