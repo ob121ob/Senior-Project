@@ -38,10 +38,9 @@ function logout(){
 
   }
 }
-
-  document.getElementById('search-button').addEventListener('click', apiCallShow, false);
-
-function apiCallShow(){
+  document.getElementById('search-button').addEventListener('click', apiCall, false);
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+function apiCall(){
 
   var rand = Math.random()
   var apiKey = 'ac046712'
@@ -58,16 +57,16 @@ function apiCallShow(){
   title = title.replace(' ', '-') //making it api friendly
   console.log('title w/o spaces: ' + title) 
   //var apiCall = 'https://www.omdbapi.com/?t=Jaws&apikey=ac046712' //should be modified a bit
-  var apicallShow = 'https://www.omdbapi.com/?t=' //prefix
-  apicallShow += title 
-  apicallShow += '&apikey='
-  apicallShow += apiKey
+  var apicall = 'https://www.omdbapi.com/?t=' //prefix
+  apicall += title 
+  apicall += '&apikey='
+  apicall += apiKey
   //Kayla's key: ac046712
 
-  console.log(apicallShow)
+  console.log(apicall)
   //any spaces should be formatted with dashes
   var request = new XMLHttpRequest()
-  request.open('GET', apicallShow, true)
+  request.open('GET', apicall, true)
   request.onload = function () {
       var data = JSON.parse(this.response)
       if(request.status >= 200 && request.status < 400 && data.hasOwnProperty('Title')) {
@@ -83,7 +82,7 @@ function apiCallShow(){
   }
 request.send()
 }  
-
+/////////////////////////////////////////////////////////////////////////////////
 
 function getShows(){
   var db = firebase.firestore();
@@ -198,9 +197,9 @@ function updateDatabase(title, check){
 /////////////////////////////////////////////////////////////////////
 
 //favorites
-document.getElementById('fave-button').addEventListener('click', apiCallFave, false);
+document.getElementById('fave-button').addEventListener('click', apiCall2, false);
 
-function apiCallFave(){
+function apiCall2(){
 
   var rand = Math.random()
   var apiKey = 'ac046712'
@@ -217,16 +216,16 @@ function apiCallFave(){
   title = title.replace(' ', '-') //making it api friendly
   console.log('title w/o spaces: ' + title) 
   //var apiCall = 'https://www.omdbapi.com/?t=Jaws&apikey=ac046712' //should be modified a bit
-  var apicallFave = 'https://www.omdbapi.com/?t=' //prefix
-  apicallFave += title 
-  apicallFave += '&apikey='
-  apicallFave += apiKey
+  var apicall = 'https://www.omdbapi.com/?t=' //prefix
+  apicall += title 
+  apicall += '&apikey='
+  apicall += apiKey
   //Kayla's key: ac046712
 
-  console.log(apicallFave)
+  console.log(apicall)
   //any spaces should be formatted with dashes
   var request = new XMLHttpRequest()
-  request.open('GET', apicallFave, true)
+  request.open('GET', apicall, true)
   request.onload = function () {
       var data = JSON.parse(this.response)
       if(request.status >= 200 && request.status < 400 && data.hasOwnProperty('Title')) {
@@ -288,7 +287,7 @@ function addFaves(title, released, genre, plot, check){
   li.onclick = function(ev){
     ev.target.classList.toggle('checked');
     var check = ev.target.classList.contains("checked");
-    updateFaveDatabase(title, check);
+    updateDatabase(title, check);
 
   }
 
@@ -353,46 +352,18 @@ function updateFaveDatabase(title, check){
   });
 
 }
-// function makeList(array) {
-//   // Establish the array which acts as a data source for the list
-//   let arr = array,
-//   // Make a container element for the list
-//   listContainer = document.createElement('div'),
-//   // Make the list
-//   listElement = document.createElement('ul'),
-//   // Set up a loop that goes through the items in listItems one at a time
-//   numberOfListItems = arr.length,
-//   listItem,
-//   i;
-
-//   // Add it to the page
-//   document.getElementsByTagName('body')[0].appendChild(listContainer);
-//   listContainer.appendChild(listElement);
-  
-
-//   for (i = 0; i < numberOfListItems; ++i) {
-//       // create an item for each one
-//       listItem = document.createElement('li');
-
-//       // Add the item text
-//       listItem.innerHTML = arr[i];
-
-//       // Add listItem to the listElement
-//       listElement.appendChild(listItem);
-//   }
-// }
 
 
 
 
 
 
-/////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////
 
 //dislikes
-document.getElementById('dislike-button').addEventListener('click', apiCallDislike, false);
+document.getElementById('dislike-button').addEventListener('click', apiCall3, false);
 
-function apiCallDislike(){
+function apiCall3(){
 
   var rand = Math.random()
   var apiKey = 'ac046712'
@@ -409,16 +380,16 @@ function apiCallDislike(){
   title = title.replace(' ', '-') //making it api friendly
   console.log('title w/o spaces: ' + title) 
   //var apiCall = 'https://www.omdbapi.com/?t=Jaws&apikey=ac046712' //should be modified a bit
-  var apicallDislike = 'https://www.omdbapi.com/?t=' //prefix
-  apicallDislike += title 
-  apicallDislike += '&apikey='
-  apicallDislike += apiKey
+  var apicall = 'https://www.omdbapi.com/?t=' //prefix
+  apicall += title 
+  apicall += '&apikey='
+  apicall += apiKey
   //Kayla's key: ac046712
 
-  console.log(apicallDislike)
+  console.log(apicall)
   //any spaces should be formatted with dashes
   var request = new XMLHttpRequest()
-  request.open('GET', apicallDislike, true)
+  request.open('GET', apicall, true)
   request.onload = function () {
       var data = JSON.parse(this.response)
       if(request.status >= 200 && request.status < 400 && data.hasOwnProperty('Title')) {
@@ -545,4 +516,3 @@ function updateDislikesDatabase(title, check){
   });
 
 }
-
