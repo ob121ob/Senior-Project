@@ -75,20 +75,6 @@ db.collection(newquery).get().then((snapshot)=>{
 
 
 
-// db.collection("ForumNames").get().then((snapshot)=>{
-//     snapshot.docs.forEach(doc => {  
-//         var listitem1 = renderList(doc);
-//         console.log(listitem1);
-//     })
-    
-// });
-
-// var span = document.getElementById("Forum-list");
-// span.onclick = function(event){
-//     console.log(renderList(listitem1));
-    
-// }
-
 
 
 //save data
@@ -97,7 +83,8 @@ form.addEventListener('submit', (e) => {
     var newvari = form.topic.value;
     // this has to be done this way to prevent the randon generated num
     db.collection(newquery).doc(newvari).set({
-        name: form.topic.value
+        name: form.topic.value,
+        description:form.description.value
     })
     // db.collection('MoviesForum').add({
     //     name: form.topic.value

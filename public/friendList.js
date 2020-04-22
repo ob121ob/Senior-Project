@@ -27,40 +27,21 @@ auth.onAuthStateChanged(function(user) {
 function renderCafe(doc){
     let li = document.createElement('li');
     let name = document.createElement('span');
-    let butt = document.createElement("div");
 
     li.setAttribute('data-id', doc.id);
     name.textContent = doc.data().name;
-    butt.textContent = "+";
+    
 
     li.appendChild(name);
-    li.appendChild(butt);
     cafeList.appendChild(li);
 
-    butt.addEventListener("click",(e) =>{
-      e.stopPropagation();
-      let id = e.target.parentElement.getAttribute("data-id");
-      console.log(id);
-      console.log(name);
-      name1 = name.textContent;
-      console.log(name1);
-      db.collection("users").doc(currentUserID).collection('friendsList')
-      .doc(id).set({
-      Username: name1
-      })
-      window.location=("/homepage.html");
-      alert( "you are now following "+ name1);
-      
-
-    })
+   
 }
 
 // getting data
-db.collection('users').get().then(snapshot => {
+db.collection('users').doc(currentUserID).get().then(snapshot => {
     snapshot.docs.forEach(doc => {
         renderCafe(doc);
     });
     
 });
-
-

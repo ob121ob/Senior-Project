@@ -12,6 +12,19 @@
   <script src="/__/firebase/7.11.0/firebase-database.js"></script>
 <script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
 <script src="/__/firebase/init.js"></script>
+<style>
+  ul {
+
+    list-style-type: none;
+}
+ul.content{
+  margin-left: 0px;
+}
+span{
+  margin-left: auto;
+  font-size: 40px;
+}
+</style>
   
 </head>
 <body>
@@ -41,11 +54,22 @@
         <div class="well">
           <p><a href="#">Interests</a></p>
           <p>
-            <span class="label label-default">News</span>
             
-            <span class="label label-success">Labels</span>
+            <span class="label label-danger">Friends
+              <p id = "paragraph">
+                <body>
             
-            <span class="label label-danger">Friends</span>
+                <div class="content">
+            
+                    <form id="add-cafe-form"></form>
+            
+                    <ul id="cafe-list"></ul>
+            
+                </div>
+            
+                </body>
+              </p>
+            </span>
           </p>
         </div>
         
@@ -144,3 +168,4 @@
  
 
 <script src = "checkUser.js"></script>
+<script src = "friendList.js"></script>

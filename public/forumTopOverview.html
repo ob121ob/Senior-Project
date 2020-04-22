@@ -38,7 +38,7 @@
 
 
             body{
-    background-image: url("movies.jpg");
+    background-image: url("movie.jpg");
     font-family: ubuntu;
 }
 
@@ -126,6 +126,18 @@ button{
     letter-spacing: 1px;
     color: #999;
 }
+#topicButton{
+    border: 0;
+    background: rgb(189, 13, 13);
+    border-radius: 10px;
+    padding: 13px;
+    width: 35%;
+    box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
+    font-weight: bold;
+    font-family: ubuntu;
+    letter-spacing: 1px;
+    color: #999;
+}
 
 
         </style>
@@ -143,8 +155,8 @@ button{
                     <input type="text" class = "form-control mr-3" placeholder="Search">
                     <button type="submit" class="btn btn-primary">Search</button>      
                 </form>
-                <ul class="nav navbar-nav">
-                    <li><a id="myLink" title="LOGOUT" href = "index.html" onclick="logout();">LOGOUT</a></li>
+                <ul class="nav navbar-nav" id = "logger"></ul>
+                    <button><a id="myLink" title="LOGOUT" href = "index.html" onclick="logout();">LOGOUT</a></button>
                     
                   </ul>
             </div>
@@ -162,7 +174,8 @@ button{
                 <div class ="content">
                     <form id = "add-Forum-List">
                         <input type = "text" name ="topic" placeholder = "Topic name">
-                        <button>Add Topic</button>
+                        <input type = "text" name = "description" placeholder = "Description">
+                        <button id = "topicButton">Add Topic</button>
                     </form>
                     <ul id = "Forum-list" a href = "post.html?setItem" > </ul>
                                     
