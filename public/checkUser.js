@@ -1,4 +1,19 @@
 var currentUserID;
+var currentEmail;
+var varibale;
+var array = [];
+
+
+db.collection("users").get().then((snapshot)=>{
+  snapshot.docs.forEach(doc =>{
+    varibale = doc.data();
+    array.push(varibale);
+    
+  })
+  
+})
+
+
 firebase.auth().onAuthStateChanged(function(user)
 {
     if(user){
@@ -8,10 +23,12 @@ firebase.auth().onAuthStateChanged(function(user)
           getShows();
           getFavorites();
           getDislikes();
+
     }
     else{
       console.log("imhere");
-      redirect("/index.html");
+      // this will be reached if the user tries to go directly to the page forgoing login
+      window.location = "/index.html"
     }
 });
 
@@ -335,6 +352,35 @@ function updateFaveDatabase(title, check){
   });
 
 }
+// function makeList(array) {
+//   // Establish the array which acts as a data source for the list
+//   let arr = array,
+//   // Make a container element for the list
+//   listContainer = document.createElement('div'),
+//   // Make the list
+//   listElement = document.createElement('ul'),
+//   // Set up a loop that goes through the items in listItems one at a time
+//   numberOfListItems = arr.length,
+//   listItem,
+//   i;
+
+//   // Add it to the page
+//   document.getElementsByTagName('body')[0].appendChild(listContainer);
+//   listContainer.appendChild(listElement);
+  
+
+//   for (i = 0; i < numberOfListItems; ++i) {
+//       // create an item for each one
+//       listItem = document.createElement('li');
+
+//       // Add the item text
+//       listItem.innerHTML = arr[i];
+
+//       // Add listItem to the listElement
+//       listElement.appendChild(listItem);
+//   }
+// }
+
 
 
 
