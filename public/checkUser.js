@@ -39,7 +39,7 @@ function logout(){
   }
 }
   document.getElementById('search-button').addEventListener('click', apiCall, false);
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 function apiCall(){
 
   var rand = Math.random()
@@ -82,7 +82,7 @@ function apiCall(){
   }
 request.send()
 }  
-
+/////////////////////////////////////////////////////////////////////////////////
 
 function getShows(){
   var db = firebase.firestore();
@@ -197,9 +197,9 @@ function updateDatabase(title, check){
 /////////////////////////////////////////////////////////////////////
 
 //favorites
-document.getElementById('fave-button').addEventListener('click', apiCall, false);
+document.getElementById('fave-button').addEventListener('click', apiCall2, false);
 
-function apiCall(){
+function apiCall2(){
 
   var rand = Math.random()
   var apiKey = 'ac046712'
@@ -352,46 +352,18 @@ function updateFaveDatabase(title, check){
   });
 
 }
-// function makeList(array) {
-//   // Establish the array which acts as a data source for the list
-//   let arr = array,
-//   // Make a container element for the list
-//   listContainer = document.createElement('div'),
-//   // Make the list
-//   listElement = document.createElement('ul'),
-//   // Set up a loop that goes through the items in listItems one at a time
-//   numberOfListItems = arr.length,
-//   listItem,
-//   i;
-
-//   // Add it to the page
-//   document.getElementsByTagName('body')[0].appendChild(listContainer);
-//   listContainer.appendChild(listElement);
-  
-
-//   for (i = 0; i < numberOfListItems; ++i) {
-//       // create an item for each one
-//       listItem = document.createElement('li');
-
-//       // Add the item text
-//       listItem.innerHTML = arr[i];
-
-//       // Add listItem to the listElement
-//       listElement.appendChild(listItem);
-//   }
-// }
 
 
 
 
 
 
-/////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////
 
 //dislikes
-document.getElementById('dislike-button').addEventListener('click', apiCall, false);
+document.getElementById('dislike-button').addEventListener('click', apiCall3, false);
 
-function apiCall(){
+function apiCall3(){
 
   var rand = Math.random()
   var apiKey = 'ac046712'
