@@ -27,7 +27,8 @@ auth.onAuthStateChanged(function(user) {
         currentEmail = user.email;
 
         addFriend(currentUserID,currentEmail);
-          window.location=("/homepage.html");
+        
+        window.location=("/homepage.html");
        
         
     
@@ -108,6 +109,8 @@ function addFriend(user,userEmail){
   db.collection("users").doc(user).set({
     name:userEmail
  
-  })
+  }).then(
+    setTimeout(() => {  console.log(""); }, 2000),
+  )
 
 }
