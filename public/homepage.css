@@ -1,3 +1,4 @@
+/* Give entire page a background*/
 body{
     background-image: url("movie.jpg");
     font-family: ubuntu;
@@ -11,6 +12,7 @@ body{
     border-radius: 10px 120px 10px 10px;
     box-shadow: 1px 3px 5px rgba(223,223,223)
 }
+/* assign color to primary navigation*/
 .navbar {
   overflow: hidden;
   background-color: rgba(51,51,51);
@@ -45,14 +47,13 @@ body{
   flex-wrap: wrap;
 }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
 .side {
   -ms-flex: 20%; /* IE10 */
   flex: 30%;
   background-color: #f1f1f1;
   padding: 20px;
 }
+/*  Create three lists next to eachother*/
 .list1 {
   width:270px;
   height:550px;

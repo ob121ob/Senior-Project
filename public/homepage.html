@@ -1,131 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>SceneItAll</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel = "stylesheet" href = "homepage.css">
+  <link rel="stylesheet" href="homepage.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="/__/firebase/7.11.0/firebase-app.js"></script>
   <script src="/__/firebase/7.11.0/firebase-auth.js"></script>
   <script src="/__/firebase/7.11.0/firebase-database.js"></script>
-<script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
-<script src="/__/firebase/init.js"></script>
-
+  <script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
 </head>
+
 <body>
-<div class="content">
-
-  
-     <div class="navbar">
-	 <a href="#">SceneItAll</a>
-     <a href="homepage.html">Home</a>
+  <div class="content">
+    <div class="navbar">
+      <!--primary navigation bar-->
+      <a href="#">SceneItAll</a>
+      <a href="homepage.html">Home</a>
       <a href="friends.html">Friends</a>
-	  <a href="forumHome.html">Forums</a>
+      <a href="forumHome.html">Forums</a>
       <a id="myLink" title="LOGOUT" href="index.html" onclick="logout();">LOGOUT</a>
-      </div>
-
-  
-<div class="side">    
-    <div class="row">
-<center>
+    </div>
+    <div class="side">
+      <div class="row">
+        <center>
+          <!--placeholder to greet logged in user-->
           <h6 id="email">null</h6>
-       </center>
-       
+        </center>
       </div>
-   </div>
-  <center>
-  <div class="main">
-    <div id="search" >
-      <h4><br>Search for a TV Show or Movie to Add...</h4>
-        <div class="input-group mb-3 col-5">
+    </div>
+    <center>
+      <div class="main">
+        <div id="search">
+          <h4><br>Search for a TV Show or Movie to Add...</h4>
+          <div class="input-group mb-3 col-5">
             <input type="text" class="form-control" placeholder="Search" id='searchbar'>
             <div class="input-group-append">
               <button class="btn btn-outline-dark" id='search-button'>Watchlist</button>
               <button class="btn btn-outline-dark" id='fave-button'>Favorites</button>
               <button class="btn btn-outline-dark" id='dislike-button'>Dislikes</button>
-              
             </div>
+          </div>
         </div>
-  </div>
-  <div id="list" class="container">
-    <div class="list1"">
+        <div id="list" class="container">
+          <div class="list1">
   <div>
       <h4>Watchlist</h4>
   </div>
-
-    <ul id="myUL">
-        <!-- <li class="checked">
+    <ul id=" myUL">
+            <!-- <li class="checked">
               Show<br> 
               Released: <br>
               Genre:<br>
               Plot: <br>
         </li> -->
-      </ul>
-
-</div>
-<div class="list2">
-<div >
-<h4>Favorites</h4>
-</div>
-
-<ul id="myFaves">
-  <!-- <li class="checked">
+            </ul>
+          </div>
+          <div class="list2">
+            <div>
+              <h4>Favorites</h4>
+            </div>
+            <ul id="myFaves">
+              <!-- <li class="checked">
         Show<br> 
         Released: <br>
         Genre:<br>
         Plot: <br>
   </li> -->
-</ul>
-</div>
-
-<div class="list3">
-<div >
-<h4>Dislikes</h4>
-</div>
-
-<ul id="myDislikes">
-  <!-- <li class="checked">
+            </ul>
+          </div>
+          <div class="list3">
+            <div>
+              <h4>Dislikes</h4>
+            </div>
+            <ul id="myDislikes">
+              <!-- <li class="checked">
         Show<br> 
         Released: <br>
         Genre:<br>
         Plot: <br>
   </li> -->
-</ul>
-</div>
-</div>
-  
-</div>
-</center>
-</div>
-
+            </ul>
+          </div>
+        </div>
+      </div>
+    </center>
+  </div>
 </body>
+
 </html>
+
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-      apiKey: "AIzaSyAXwE4VY1yH278r_yzaPEftxzTSsL9JGl4",
-      authDomain: "sceneitall-571b3.firebaseapp.com",
-      databaseURL: "https://sceneitall-571b3.firebaseio.com",
-      projectId: "sceneitall-571b3",
-      storageBucket: "sceneitall-571b3.appspot.com",
-      messagingSenderId: "955672304924",
-      appId: "1:955672304924:web:7b2c384ffd32b784e9aed9",
-      measurementId: "G-VLP2JES1TF"
+    apiKey: "AIzaSyAXwE4VY1yH278r_yzaPEftxzTSsL9JGl4",
+    authDomain: "sceneitall-571b3.firebaseapp.com",
+    databaseURL: "https://sceneitall-571b3.firebaseio.com",
+    projectId: "sceneitall-571b3",
+    storageBucket: "sceneitall-571b3.appspot.com",
+    messagingSenderId: "955672304924",
+    appId: "1:955672304924:web:7b2c384ffd32b784e9aed9",
+    measurementId: "G-VLP2JES1TF"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
   const auth = firebase.auth();
   const db = firebase.firestore();
-
-
-
-  
-  
-  </script>
- 
-
-<script src = "checkUser.js"></script>
+</script>
+<script src="checkUser.js"></script>
