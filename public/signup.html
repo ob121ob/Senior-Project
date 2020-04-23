@@ -1,119 +1,92 @@
 <!DOCTYPE html>
-<html lang = "en" dir = "ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Login Form</title>
-        <link rel = "stylesheet" href = "signup.css">
+<html lang="en" dir="ltr">
 
-        <script src="/__/firebase/7.11.0/firebase-app.js"></script>
-        <script src="/__/firebase/7.11.0/firebase-auth.js"></script>
-        <script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
-    </head>
-    <body>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-3">SceneItAll</h1>
-                
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="signup.css">
+
+    <script src="/__/firebase/7.11.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.11.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">SceneItAll</h1>
+
         </div>
+    </div>
 
 
-    <div class = "hero">
+    <div class="hero">
         <div class="form-box">
-            <div class = "button-box">
-                <div id = "btn"></div>
-                <button type = "button" class = "toggle-btn" onClick="login()">Log in</button>
-                <button type = "button" class = "toggle-btn" onClick="register()">Register</button>
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onClick="login()">Log in</button>
+                <button type="button" class="toggle-btn" onClick="register()">Register</button>
             </div>
             <!--This is the form for a user who already exists-->
-            <form id = "login" class= "input-group">
-                <input type = "email" id = "sign-in-email" class = "input-field" placeholder= "email" required>
-                <input type = "text" id  = "pw-login" class = "input-field" placeholder= "Enter Password" required>
-                <input type = "checkbox" class = "check-box"><span>Remember password</span>
-                <Button type = "submit" class = "submit-btn">Login</button>
+            <form id="login" class="input-group">
+                <input type="email" id="sign-in-email" class="input-field" placeholder="email" required>
+                <input type="text" id="pw-login" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>Remember password</span>
+                <Button type="submit" class="submit-btn">Login</button>
             </form>
             <!--This is the form for a user who does not exist -->
-            <form id = "register" class= "input-group">
-                <input type = "email" id  = "register-email"class = "input-field" placeholder= "Email" required>
-                <input type = "text" id = "pw1" class = "input-field" placeholder= "Enter Password" required>
-                <input type = "text" id = "pw2" class = "input-field" placeholder= "Enter Password Again" required>
-                <input type = "checkbox" class = "check-box"><span>Remember password</span>
-                <Button type = "submit" class = "submit-btn">Register</Button>
+            <form id="register" class="input-group">
+                <input type="email" id="register-email" class="input-field" placeholder="Email" required>
+                <input type="text" id="pw1" class="input-field" placeholder="Enter Password" required>
+                <input type="text" id="pw2" class="input-field" placeholder="Enter Password Again" required>
+                <input type="checkbox" class="check-box"><span>Remember password</span>
+                <Button type="submit" class="submit-btn">Register</Button>
             </form>
 
         </div>
 
     </div>
-    
 
 
 
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAXwE4VY1yH278r_yzaPEftxzTSsL9JGl4",
+            authDomain: "sceneitall-571b3.firebaseapp.com",
+            databaseURL: "https://sceneitall-571b3.firebaseio.com",
+            projectId: "sceneitall-571b3",
+            storageBucket: "sceneitall-571b3.appspot.com",
+            messagingSenderId: "955672304924",
+            appId: "1:955672304924:web:7b2c384ffd32b784e9aed9",
+            measurementId: "G-VLP2JES1TF"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
 
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
 
+    <script src="signup.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
 
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+    </script>
+</body>
 
-
-
-
-
-
-
-<!--      
-            <h1>Sign-Up</h1>
-            <input type="email" id = "email_sfield" placeholder="Email"/>
-            <input type="password" id= "password_sfield" placeholder="Enter a Password"/>
-            <button onclick="signUp()">Sign Up</button>
-            
-       
-        <Footer>
-            <a href =index.html>Already a Member?</a>
-        </Footer> -->
-
-
-        <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyAXwE4VY1yH278r_yzaPEftxzTSsL9JGl4",
-                authDomain: "sceneitall-571b3.firebaseapp.com",
-                databaseURL: "https://sceneitall-571b3.firebaseio.com",
-                projectId: "sceneitall-571b3",
-                storageBucket: "sceneitall-571b3.appspot.com",
-                messagingSenderId: "955672304924",
-                appId: "1:955672304924:web:7b2c384ffd32b784e9aed9",
-                measurementId: "G-VLP2JES1TF"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-
-            const auth = firebase.auth();
-            const db = firebase.firestore();
-
-
-
-            
-            
-            </script>
-
-            
-            <script src = "signup.js"></script>
-             <!-- Compiled and minified JavaScript -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
-            <script>
-                var x = document.getElementById("login");
-                var y = document.getElementById("register");
-                var z = document.getElementById("btn");
-
-                function register(){
-                    x.style.left = "-400px";
-                    y.style.left = "50px";
-                    z.style.left = "110px";
-                }
-                function login(){
-                    x.style.left = "50px";
-                    y.style.left = "450px";
-                    z.style.left = "0px";
-                }
-            </script>
-    </body>
 </html>
