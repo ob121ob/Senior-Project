@@ -1,6 +1,7 @@
 
 const cafeList = document.querySelector('#cafe-list');
 var friend;
+var name1 = "";
 auth.onAuthStateChanged(function(user) {
   if (user) {
       // User is signed in.
@@ -44,14 +45,16 @@ function renderCafe(doc){
       console.log(name);
       name1 = name.textContent;
       console.log(name1);
+      console.log(currentUserID);
       db.collection("users").doc(currentUserID).collection('friendsList')
       .doc(id).set({
       Username: name1
+      }).then(function() {
+        console.log("Document successfully written!");
+        window.location=("/homepage.html");
       })
-      window.location=("/homepage.html");
-      alert( "you are now following "+ name1);
       
-
+      alert( "you are now following "+ name1);
     })
 }
 

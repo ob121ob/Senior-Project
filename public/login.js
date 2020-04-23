@@ -26,8 +26,10 @@ auth.onAuthStateChanged(function(user) {
         currentUserID = user.uid;
         currentEmail = user.email;
 
-        addFriend(currentUserID,currentEmail);
-        window.location = "/homepage.html"
+        addFriend(currentUserID,currentEmail).then(
+          window.location = "/homepage.html"
+        );
+        
     
         // mov them to thir homepage....
         //redirect("/homepage.html");
