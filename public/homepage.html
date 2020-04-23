@@ -4,7 +4,7 @@
   <title>SceneItAll</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel = "stylesheet" href = "homepage.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="/__/firebase/7.11.0/firebase-app.js"></script>
@@ -12,73 +12,32 @@
   <script src="/__/firebase/7.11.0/firebase-database.js"></script>
 <script src="/__/firebase/7.11.0/firebase-firestore.js"></script>
 <script src="/__/firebase/init.js"></script>
-<style>
-  ul {
 
-    list-style-type: none;
-}
-ul.content{
-  margin-left: 0px;
-}
-span{
-  margin-left: auto;
-  font-size: 40px;
-}
-</style>
-  
 </head>
 <body>
+<div class="content">
 
-<nav class="navbar navbar-inverse "> <!-- default navbar, might wanna change this later... -->
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">SceneItAll</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="homepage.html">Home</a></li>
-      <li><a href="friends.html">Friends</a></li>
-      <li><a href="forumHome.html">Forums</a></li>
-      <li><a id="myLink" title="LOGOUT"
-        href="index.html" onclick="logout();">LOGOUT</a></li>
-      
-    </ul>
-  </div>
-</nav>
   
-<div class="container text-center">    
+     <div class="navbar">
+	 <a href="#">SceneItAll</a>
+     <a href="homepage.html">Home</a>
+      <a href="friends.html">Friends</a>
+	  <a href="forumHome.html">Forums</a>
+      <a id="myLink" title="LOGOUT" href="index.html" onclick="logout();">LOGOUT</a>
+      </div>
+
+  
+<div class="side">    
     <div class="row">
-      <div class="col-sm-3 well">
-        <div class="well">
+<center>
           <h6 id="email">null</h6>
-        </div>
-        <div class="well">
-          <p><a href="#">Interests</a></p>
-          <p>
-            
-            <span class="label label-danger">Friends
-              <p id = "paragraph">
-                <body>
-            
-                <div class="content">
-            
-                    <form id="add-cafe-form"></form>
-            
-                    <ul id="cafe-list"></ul>
-            
-                </div>
-            
-                </body>
-              </p>
-            </span>
-          </p>
-        </div>
-        
+       </center>
        
       </div>
-   
+   </div>
   <center>
-  <footer class="container-fluid">
-    <div id="search" class="container">
+  <div class="main">
+    <div id="search" >
       <h4><br>Search for a TV Show or Movie to Add...</h4>
         <div class="input-group mb-3 col-5">
             <input type="text" class="form-control" placeholder="Search" id='searchbar'>
@@ -91,54 +50,56 @@ span{
         </div>
   </div>
   <div id="list" class="container">
-      
-    <div>
-        <h4>Watchlist</h4>
-    </div>
+    <div class="list1"">
+  <div>
+      <h4>Watchlist</h4>
+  </div>
 
-      <ul id="myUL">
-          <!-- <li class="checked">
-                Show<br> 
-                Released: <br>
-                Genre:<br>
-                Plot: <br>
-          </li> -->
-        </ul>
+    <ul id="myUL">
+        <!-- <li class="checked">
+              Show<br> 
+              Released: <br>
+              Genre:<br>
+              Plot: <br>
+        </li> -->
+      </ul>
 
-
+</div>
+<div class="list2">
 <div >
-  <h4>Favorites</h4>
+<h4>Favorites</h4>
 </div>
 
 <ul id="myFaves">
-    <!-- <li class="checked">
-          Show<br> 
-          Released: <br>
-          Genre:<br>
-          Plot: <br>
-    </li> -->
-  </ul>
+  <!-- <li class="checked">
+        Show<br> 
+        Released: <br>
+        Genre:<br>
+        Plot: <br>
+  </li> -->
+</ul>
+</div>
 
-
-
+<div class="list3">
 <div >
-  <h4>Dislikes</h4>
+<h4>Dislikes</h4>
 </div>
 
 <ul id="myDislikes">
-    <!-- <li class="checked">
-          Show<br> 
-          Released: <br>
-          Genre:<br>
-          Plot: <br>
-    </li> -->
-  </ul>
+  <!-- <li class="checked">
+        Show<br> 
+        Released: <br>
+        Genre:<br>
+        Plot: <br>
+  </li> -->
+</ul>
 </div>
-    
-    
-  </center>
-</footer>
+</div>
   
+</div>
+</center>
+</div>
+
 </body>
 </html>
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
@@ -168,4 +129,3 @@ span{
  
 
 <script src = "checkUser.js"></script>
-<script src = "friendList.js"></script>
