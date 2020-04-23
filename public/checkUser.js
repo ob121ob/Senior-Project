@@ -57,7 +57,6 @@ function apiCallShow() {
   request.open('GET', apicallShow, true)
   request.onload = function () {
     var data = JSON.parse(this.response)
-    //put returned data into variables to be user later
     if (request.status >= 200 && request.status < 400 && data.hasOwnProperty('Title')) {
       var title = data.Title;
       var released = data.Released;
@@ -91,6 +90,7 @@ function getShows() {
 }
 
 //add show to users list and display
+
 function addShow(title, released, genre, plot, check) {
   console.log("adding " + title);
   var li = document.createElement("li");
